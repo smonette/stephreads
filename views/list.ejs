@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>What Steph read in <%= year %></title>
+    <meta name="description" content="What Steph read in <%= year %>" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="https://cdn.glitch.com/8140252c-b6e1-4ade-a730-6fda0677955c%2Fandroid-chrome-512x512.png?v=1579746812797">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+       <h1>What Steph read in&nbsp;<%= year %></h1>
+       <p>I read <%= data.length %> books in <%= year %>.</p>
+    </header>
+    <main>
+      
+      <ul class="book-list">
+        <% for(i = 0; i < data.length; i++) { %>
+          <li class="book-item">
+            <% if (data[i].fields.CoverPhoto) { %>
+              <div style="background:url(<%= data[i].fields.CoverPhoto %>) top center no-repeat; background-size: contain;" class="book-cover"><%= data[i].fields.Name %> cover image</div>
+            <% }  else { %>
+              <div style="background:url(https://cdn.glitch.com/8140252c-b6e1-4ade-a730-6fda0677955c%2Fbook%20placeholder.png?v=1572305920341) 0 0 no-repeat; background-size: contain;" class="book-cover">No cover image for <%= data[i].fields.Name %></div>
+            <% }%>
+            <div class="book-info">  
+              <span class="book-title"><%= data[i].fields.Name %></span>
+              <%= data[i].fields.Author %>
+              <div class="book-rating">  
+                <%= data[i].fields.Rating %>
+              </div>
+              
+              <% if (data[i].fields.Fave) { %>
+              <div>My favorite book of&nbsp;<%= year %>!🥇</div>
+              <% }%>
+            </div>
+          </li>
+        <% } %>
+      </ul>
+    </main>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;bottom:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+
+  </body>
+</html>
