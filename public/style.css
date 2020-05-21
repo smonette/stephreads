@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,600,800&display=swap');
+
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{margin:0;font-size:16px}*{box-sizing:border-box}address,article,aside,blockquote,canvas,dd,div,dl,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,li,main,nav,noscript,ol,output,p,pre,section,table,tfoot,ul,video{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:400}a{text-decoration:none;color:inherit}img{height:auto;border:0}cite{font-style:normal}dl{list-style-type:none}button,input,meter,optgroup,progress,select,textarea{color:inherit;font:inherit;margin:0;padding:0;outline:0;appearance:none;-webkit-appearance:none;-moz-appearance:none;-o-appearance:none}input[type=checkbox]{appearance:checkbox;-webkit-appearance:checkbox;-moz-appearance:checkbox;-o-appearance:checkbox}input[type=radio]{appearance:radio;-webkit-appearance:radio;-moz-appearance:radio;-o-appearance:radio}table{border-collapse:collapse;border-spacing:0}td,th{text-align:left;font-weight:400}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #192a56;
+  margin: 0;
+  padding: 0;
+  background: #f5f6fa;
+}
+
+header {
+  padding: 20px; 
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height:2;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* main {
+  padding: 20px;
+} */
+
+.book-list {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-item: stretch;
+  margin-bottom: 20px;
+}
+
+.book-item {
+  width: 25%;
+  margin-bottom: 40px;
+  list-style: none;
+  display: flex;
+  padding: 20px;
+}
+
+.book-info {
+  padding: 0 20px;
+  width: 70%;
+}
+
+.book-title {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600; 
+  font-style: italic;
+}
+
+.book-cover {
+  max-height: 250px;
+  width: 30%;
+/*   max-width: 125px; */
+  text-indent: -100000px;
+}
+
+.book-rating {
+  margin: 20px 0;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .book-item {
+    width: 33%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .book-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .book-list {
+    flex-direction: column;
+  }
+  
+  .book-item {
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: 1px solid lightgrey;
+  }
+  h1 {
+    font-size: 1.5rem;
+    line-height:1.75;
+  }
+}
